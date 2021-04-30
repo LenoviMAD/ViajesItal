@@ -1,0 +1,15 @@
+.input-field1 select, .input-field1 input, .input-field1 textarea {
+    display: block;
+    width: 100%;
+    border: 1px solid #333;
+    padding: 10px;
+    height: 40px;
+}
+
+.input-field1 textarea {
+    height: auto;
+}
+
+.valDanger.input-field1 select, .valDanger.input-field1 input, .valDanger.input-field1 textarea {
+    border: 2px solid red;
+}
