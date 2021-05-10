@@ -2,7 +2,7 @@
     margin-right: 20px;
 }
 
-.df {
+.displayf {
     display: flex;
 }
 
@@ -12,4 +12,44 @@
 
 .mt20 {
     margin-top: 20px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.colorb{
+    color: black;
+}
+
+.p15{
+    padding: 15px;
+}
+
+.mr15{
+    margin-right: 15px;
+}
+
+.ml15{
+    margin-left: 15px;
+}
+
+.fs{
+    font-size: 25px;
+}
+
+.mb0{
+    margin-bottom: 0;
+}
+
+.mt10{
+    margin-top: 10px;
+}
+
+.mt40{
+    margin-top: 40px;
 }

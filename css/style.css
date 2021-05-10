@@ -63,5 +63,15 @@ input.image_buscar {
 .title-Input {
     position: absolute;
     color: #fff;
-    margin-top: -30px
+    margin-top: -30px;
+    font-weight: bold;
+}
+
+.margin-auto{
+    margin: auto;
+}
+
+select {
+    padding: 10px;
+    cursor: pointer;
 }

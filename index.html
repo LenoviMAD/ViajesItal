@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/options.css">
     <link rel="stylesheet" href="./css/inputs.css">
-    <link rel="stylesheet" href="./css/helpers.css">
     <link rel="stylesheet" href="./css/checkbox.css">
     <link rel="stylesheet" href="./css/modal.css">
+    <link rel="stylesheet" href="./css/button.css">
+    <link rel="stylesheet" href="./css/helpers.css">
+    <link rel="stylesheet" href="./css/titles.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Document</title>
@@ -18,18 +20,80 @@
 
 <body>
 
-    <div class="modal modal--operationSummary" id="modalEncomienda">
-        <div class="modal-dialog">
+    <div class="modal modal--operationSummary is-visible" id="modalInput">
+        <div class="modal-dialog modal-fly">
             <section class="modal-content">
-                <header class="modal-header">
-                    <h3 class="modal__title">Resumen de operación</h3>
-                    <button class="close-modal hidden" type="button" aria-label="close modal" data-close>✕</button>
-                </header>
-                <aside class="modal-body">
-                </aside>
-                <footer class="modal-footer">
-                    <button class="modal__button" type="button" aria-label="close modal" data-close>Continuar</button>
-                </footer>
+                <div class="mt20">
+                    <label for="" class="title-Input colorb">A</label>
+                    <div class="input-field col s12">
+                        <select>
+                          <option value="" disabled selected>Choose your option</option>
+                          <option value="1">Option 1</option>
+                          <option value="2">Option 2</option>
+                          <option value="3">Option 3</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="mt10 mb0">
+                    <div>
+                        <label for="" class="title-modal">Adultos</label> 
+                    </div>
+                </div>
+                <div class="displayf">                    
+                    <div class="boton">
+                        <button type="submit" class="btn-icon btn-azul" disabled>
+                            <i class="ion-android-arrow-forward icon-boton prefix">remove</i>
+                        </button>
+                    </div>
+                    <div class="displayf mr15 ml15">
+                        <label for="" id="Counter" class="margin-auto fs">0</label>
+                    </div>
+                    <div class="boton mr15">
+                        <button type="submit" class="btn-icon btn-azul" disabled>
+                            <i class="ion-android-arrow-forward icon-boton prefix">add</i>
+                        </button>
+                    </div>
+                    <div>
+                        <h4>+16 Años</h4>
+                    </div>
+                </div>
+                <div class="mt10 mb0">
+                    <div>
+                        <label for="" class="title-modal">Niños</label> 
+                    </div>
+                </div>
+                <div class="displayf">                    
+                    <div class="boton">
+                        <button type="submit" class="btn-icon btn-azul" disabled>
+                            <i class="ion-android-arrow-forward icon-boton prefix">remove</i>
+                        </button>
+                    </div>
+                    <div class="displayf mr15 ml15">
+                        <label for="" id="Counter" class="margin-auto fs">0</label>
+                    </div>
+                    <div class="boton mr15">
+                        <button type="submit" class="btn-icon btn-azul" disabled>
+                            <i class="ion-android-arrow-forward icon-boton prefix">add</i>
+                        </button>
+                    </div>
+                    <div>
+                        <h4>0 a 15 Años</h4>
+                    </div>
+                </div>
+                <div class="mt40">
+                    <label for="" class="title-Input colorb">Edad del niño</label>
+                    <div class="input-field col s12">
+                        <select>
+                          <option value="" disabled selected>Choose your option</option>
+                          <option value="1">Option 1</option>
+                          <option value="2">Option 2</option>
+                          <option value="3">Option 3</option>
+                        </select>
+                      </div>
+                </div>
+                <div class="mt10">
+                    <small class="small-modal">Aqui iria el contenido del mensaje del footer</small>
+                </div>
             </section>
         </div>
     </div>
@@ -56,12 +120,13 @@
                     </label>
                 </div>
             </div>
-            <div class="df">
+            <div class="displayf">
                 <div class="container-inputs">
                     <div class="webflow-style-input">
                         <label for="" class="title-Input">Destino</label>
                         <input class="input-icon" type="text" placeholder="What's your text?"></input>
-                        <button type="submit" class="btn-icon" disabled><i class="ion-android-arrow-forward material-icons prefix">sync_alt</i></button>
+                        <button type="submit" class="btn-icon" disabled><i
+                                class="ion-android-arrow-forward material-icons prefix">sync_alt</i></button>
                     </div>
                     <div class="webflow-style-input">
                         <label for="" class="title-Input">A</label>
@@ -81,12 +146,13 @@
                     <div class="webflow-style-input">
                         <label for="" class="title-Input">Clase de cabina y viajeros</label>
                         <input class="input-icon" type="email" placeholder="What's your email?"></input>
-                        <button type="submit" class="btn-icon" aria-disabled=""><i class="ion-android-arrow-forward material-icons prefix">arrow_drop_down</i></button>
+                        <button type="submit" class="btn-icon" aria-disabled="" id="btnInput"><i
+                                class="ion-android-arrow-forward material-icons prefix">arrow_drop_down</i></button>
                     </div>
                 </div>
             </div>
             <div class="mt20">
-                <div class="df">
+                <div class="displayf">
                     <div class="width-25percent">
                         <input type="checkbox" id="test1" />
                         <label for="test1">Añadir aeropuertos cercanos</label>
@@ -97,7 +163,7 @@
                     </div>
                 </div>
 
-                <div class="df mt20">
+                <div class="displayf mt20">
                     <div class="width-25percent">
                         <input type="checkbox" id="test1" />
                         <label for="test1">Solo vuelos directos</label>
