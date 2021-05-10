@@ -9,42 +9,110 @@
     <link rel="stylesheet" href="./css/options.css">
     <link rel="stylesheet" href="./css/inputs.css">
     <link rel="stylesheet" href="./css/helpers.css">
+    <link rel="stylesheet" href="./css/checkbox.css">
+    <link rel="stylesheet" href="./css/modal.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Document</title>
 </head>
 
 <body>
+
+    <div class="modal modal--operationSummary" id="modalEncomienda">
+        <div class="modal-dialog">
+            <section class="modal-content">
+                <header class="modal-header">
+                    <h3 class="modal__title">Resumen de operación</h3>
+                    <button class="close-modal hidden" type="button" aria-label="close modal" data-close>✕</button>
+                </header>
+                <aside class="modal-body">
+                </aside>
+                <footer class="modal-footer">
+                    <button class="modal__button" type="button" aria-label="close modal" data-close>Continuar</button>
+                </footer>
+            </section>
+        </div>
+    </div>
+
     <div class="wrapper">
         <form action="">
             <div class="container-checks">
-                <p>
+                <div>
                     <label class="mr20">
                         <input class="option-input radio" name="group1" type="radio" />
                         <span>Ida y Vuelta</span>
                     </label>
-                </p>
-                <p>
+                </div>
+                <div>
                     <label class="mr20">
                         <input class="option-input radio" name="group1" type="radio" />
                         <span>Solo ida</span>
                     </label>
-                </p>
-                <p>
+                </div>
+                <div>
                     <label class="mr20">
                         <input class="option-input radio" name="group1" type="radio" />
                         <span>Varias Ciudades</span>
                     </label>
-                </p>
-            </div>
-            <div class="container">
-                <div class="input-field1">
-                    <label class="font-Bold">Desde</label>
-                    <input type="Text" placeholder="" maxlength="">
                 </div>
+            </div>
+            <div class="df">
+                <div class="container-inputs">
+                    <div class="webflow-style-input">
+                        <label for="" class="title-Input">Destino</label>
+                        <input class="input-icon" type="text" placeholder="What's your text?"></input>
+                        <button type="submit" class="btn-icon" disabled><i class="ion-android-arrow-forward material-icons prefix">sync_alt</i></button>
+                    </div>
+                    <div class="webflow-style-input">
+                        <label for="" class="title-Input">A</label>
+                        <input class="input-icon" type="text" placeholder="What's your email?"></input>
+                    </div>
+
+                    <div class="webflow-style-input">
+                        <label for="" class="title-Input">Salida</label>
+                        <input class="input-icon" type="date" placeholder=""></input>
+                        <!-- <button type="submit" class="btn-icon" disabled><i class="ion-android-arrow-forward material-icons prefix">calendar_today</i></button> -->
+                    </div>
+                    <div class="webflow-style-input">
+                        <label for="" class="title-Input">Regreso</label>
+                        <input class="input-icon" type="date" placeholder=""></input>
+                        <!-- <button type="submit" class="btn-icon" disabled><i class="ion-android-arrow-forward material-icons prefix">calendar_today</i></button> -->
+                    </div>
+                    <div class="webflow-style-input">
+                        <label for="" class="title-Input">Clase de cabina y viajeros</label>
+                        <input class="input-icon" type="email" placeholder="What's your email?"></input>
+                        <button type="submit" class="btn-icon" aria-disabled=""><i class="ion-android-arrow-forward material-icons prefix">arrow_drop_down</i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt20">
+                <div class="df">
+                    <div class="width-25percent">
+                        <input type="checkbox" id="test1" />
+                        <label for="test1">Añadir aeropuertos cercanos</label>
+                    </div>
+                    <div class="width-25percent">
+                        <input type="checkbox" id="test2" />
+                        <label for="test2">Añadir aeropuertos cercanos</label>
+                    </div>
+                </div>
+
+                <div class="df mt20">
+                    <div class="width-25percent">
+                        <input type="checkbox" id="test1" />
+                        <label for="test1">Solo vuelos directos</label>
+                    </div>
+                    <div class="width-25percent">
+                        <input type="checkbox" id="test2" />
+                        <label for="test2">Boletos flexibles únicamente</label>
+                    </div>
+                </div>
+
             </div>
         </form>
     </div>
+
 </body>
 
 </html>
+<script src="js/main.js" type="module"></script>

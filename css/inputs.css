@@ -1,4 +1,6 @@
-.input-field1 select, .input-field1 input, .input-field1 textarea {
+.input-field1 select,
+.input-field1 input,
+.input-field1 textarea {
     display: block;
     width: 100%;
     border: 1px solid #333;
@@ -10,6 +12,75 @@
     height: auto;
 }
 
-.valDanger.input-field1 select, .valDanger.input-field1 input, .valDanger.input-field1 textarea {
+.valDanger.input-field1 select,
+.valDanger.input-field1 input,
+.valDanger.input-field1 textarea {
     border: 2px solid red;
+}
+
+.webflow-style-input {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 2px;
+    padding: 5px;
+    background: rgb(255, 255, 255);
+}
+
+
+/* .webflow-style-input:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 999;
+    height: 2px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-position: 0% 0%;
+    background: linear-gradient(to right, #b294ff, #57e6e6, #feffb8, #57e6e6, #b294ff, #57e6e6);
+    background-size: 500% auto;
+    animation: gradient 3s linear infinite;
+} */
+
+.webflow-style-input input {
+    flex-grow: 1;
+    color: #00000088;
+    font-size: 15px;
+    /* line-height: 2.4rem; */
+    vertical-align: middle;
+}
+
+.webflow-style-input input::-webkit-input-placeholder {
+    color: #00000088;
+}
+
+.webflow-style-input button {
+    color: #0196fa;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    vertical-align: middle;
+    transition: color 0.25s;
+}
+
+
+/* .webflow-style-input button:hover {
+    color: #bfd2ff;
+} */
+
+.btn-icon {
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.input-icon {
+    border-style: none;
+    background: transparent;
+    outline: none;
 }
