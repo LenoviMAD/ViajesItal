@@ -1,0 +1,156 @@
+div class="container">
+<br>
+<div class="hero-unit">
+    <h1>Bootstrap Popover with Header and Footer</h1>
+    <div class="well">
+        <p>The Bootstrap Popover support only a header and a body. This is a simple fix to also create a modifiable
+            footer that resides at the bottom of the popover. Click the button below for a demo.</p>
+        <div class="popover-markup">
+            <a class="btn btn-primary" data-toggle="popover" data-placement="bottom" href="#" onclick="return false;"
+                style="text-align:center;">Click for Popover</a>
+            <div class="head hide"><span style="color: #ea5959;">Header</span></div>
+            <div class="content hide">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                <hr />
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Type something…">
+                </div>
+                <button type="submit" class="btn btn-default btn-block">Submit</button>
+            </div>
+            <div class="footer hide">
+                <button type="submit" class="btn btn-sm">More Info</button> - Footer Contents
+            </div>
+        </div>
+    </div>
+    <div class="well">To create the popover, we need to create the HTML, the css, and the JS.</div>
+    <div class="well">
+        <div class="row">
+            <div class="col-xs-12">Let's Start with the HTML:-
+                <ol>
+                    <li>Create a div with class 'popover'
+                        <pre>&lt;div class="popover-markup"&gt;</pre>
+                    </li>
+                    <li>Inside this, the first element should be an anchor or button with data-toggle="popover".
+                        <pre>&lt;a 
+  class="btn btn-primary" 
+  data-toggle="popover" 
+  data-placement="bottom" 
+  href="#" 
+  style="text-align:center;"&gt;
+  Click for Popover
+&lt;/a&gt;
+</pre>
+                    </li>
+                    <li>Create a div with the classes 'head hide'. Add HTML inside this to be displayed in the header of
+                        the popover.
+                        <pre>&lt;div class="head hide"&gt;&lt;span style="color: #ea5959;"&gt;Header&lt;/span&gt;&lt;/div&gt;</pre>
+                    </li>
+
+                    <li>Create a div with the classes 'content hide'. Add HTML inside this to be displayed in the
+                        content section of the popover.
+                        <pre>&lt;div class="content hide"&gt;Lorem ipsum dolor sit amet...&lt;/div&gt;</pre>
+                    </li>
+
+                    <li>Create a div with the classes 'footer hide'. Add HTML inside this to be displayed in the footer
+                        section of the popover.
+                        <pre>&lt;div class="footer hide"&gt;
+  &lt;button type="submit" class="btn btn-sm"&gt;More Info&lt;/button&gt; - Footer Contents        
+&lt;/div&gt;</pre>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+    </div>
+    <div class="well">
+        <div class="row">
+            <div class="col-xs-12">
+                Next comes the css:-<br> Bootstrap popover only supports header and content in it API. To get around
+                this and also include a full fledged footer, we can use a little css trickery along with the JS call to
+                the API.
+                <pre>.popover-markup .popover-footer {
+  margin: 0;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  background-color: #F7F7F7;
+  border-top: 1px solid #EBEBEB;
+}
+
+/* This is the contents of the original '.popover-content' class.
+   The padding values have been copied here.
+*/
+.popover-markup .popover-content1 {
+    padding: 9px 14px;
+    padding-top: 9px;
+    padding-right: 14px;
+    padding-bottom: 9px;
+    padding-left: 14px;
+}
+
+/* This is the original content class used by the bootstrap popover.
+   This adds padding on all sides. The padding has been set to 0 here 
+   to allow the footer to expand to fill the entire width of the popup
+*/
+.popover-markup .popover-content {
+    padding: 0px;
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+}</pre>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="well">
+        <div class="row">
+            <div class="col-xs-12">
+                Finally comes the JS.<br>Bootstrap popover only supports header and content in its API. To get around
+                this and also include a full fledged footer, we can use a little css trickery along with the JS call to
+                the API.<br> Another additional feature is to allow the Popover to be closed by clicking anywhere ouside
+                the popover makind it behave like a modal dialog.
+                <pre>/* Create the popover with Header Content and Footer */
+$('.popover-markup&gt;[data-toggle="popover"]').popover({
+  html: true,
+  title: function() {
+    return $(this).parent().find('.head').html();
+  },
+  /********** 
+    In the content method, return a class 'popover-content1' wrapping the actual 'contents', 
+    concatenated with a class 'popover-footer' wrapping the footer.
+  ************/
+  content: function() {
+      return '&lt;div class="popover-content1"&gt;' + $(this).parent().find('.content').html() +
+        '&lt;/div&gt;&lt;div class="popover-footer"&gt;' + $(this).parent().find('.footer').html() +
+        '&lt;/div&gt;';
+    }    
+});
+
+/**
+  Allow the popover to be closed by clicking anywhere outside it.
+**/
+$('body').on('click', function(e) {
+  $('.popover-markup&gt;[data-toggle="popover"]').each(function() {
+    //the 'is' for buttons that trigger popups
+    //the 'has' for icons within a button that triggers a 
+    if (!$(this).is(e.target) &amp;&amp; $(this).has(e.target).length === 0 &amp;&amp; $('.popover').has(e.target).length === 0) {
+      $(this).popover('hide');
+    }
+  });
+});</pre>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>

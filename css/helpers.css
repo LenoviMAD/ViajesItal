@@ -53,3 +53,11 @@
 .mt40{
     margin-top: 40px;
 }
+
+.pointer{
+    cursor: pointer;
+}
+
+.hide {
+    display: none
+}
