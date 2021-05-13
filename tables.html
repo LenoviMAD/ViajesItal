@@ -6,15 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
+    <link rel="stylesheet"
+    type="text/css"
+    href="DataTables/datatables.min.css" />
     <link rel="stylesheet" href="./css/tablesCustomYg.css">
     <title>Document</title>
 </head>
 
 <body>
-
-    <FORM method="post" name="userPL" class="italsis">
-        <table id="example" class="customTableYg">
+    <div class="container">
+        <table id="example"
+            class="customTableYg">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -27,7 +29,8 @@
             <tbody>
                 <tr>
                     <td class="text-center">
-                        <input class="customTableYg__check" type="checkbox">
+                        <input class="customTableYg__check"
+                            type="checkbox">
                     </td>
                     <td class="customTableYg__info">
                         <div>
@@ -57,10 +60,17 @@
                 </tr>
             </tbody>
         </table>
-    </FORM>
+    </div>
 </body>
 <script src="./js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
-<script src="./js/main.js"></script>
+
+<script type="text/javascript"
+        src="DataTables/datatables.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#example').DataTable();
+    });
+</script>
 
 </html>
