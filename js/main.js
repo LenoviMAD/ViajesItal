@@ -36,6 +36,11 @@ $("[data-toggle=popover]").each(function (i, obj) {
     });
 });
 
+
+$(document).ready( function () {
+    $('example').DataTable();
+} );
+
 // /* Create the popover with Header Content and Footer */
 // $('.popover-markup>[data-toggle="popover"]').popover({
 //     html: true,
