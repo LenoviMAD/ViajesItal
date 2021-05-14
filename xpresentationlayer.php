@@ -142,8 +142,7 @@ class xpresentationLayer
 
     /*=======================================================================
     Function: buildChecks
-    Description: end div tag
-    Parameters:
+    Description: build a check component
     Algorithm:
     Remarks:
     Standarized: 2021-05-14 09:40
