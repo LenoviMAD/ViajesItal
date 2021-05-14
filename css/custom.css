@@ -1,0 +1,59 @@
+body.transparent > header .navbar .navbar-nav li a {
+    padding-right: 15px !important;
+}
+body > header .navbar li.dropdown::after {
+    content: "";
+}
+
+.section.about.about-a .container > .row,
+.section.about.about-a .container-fluid > .row {
+    display: block;
+    width: auto;
+}
+
+body>header .navbar .navbar-nav li>a  {
+    line-height: 50px;
+}
+
+body.transparent>header .navbar .navbar-nav li a:hover {
+    color: white;
+}
+body>header.menu-b .navbar .navbar-nav li.dropdown:hover>a {
+    background-color: transparent;
+}
+
+/* Color primario */
+.btn-primary {
+    color: #fff;
+    background-color: #4682b4;
+    border-color: #4682b4;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #2a6698;
+    border-color: #4682b4;
+}
+h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong, .h1 strong, .h2 strong, .h3 strong, .h4 strong, .h5 strong, .h6 strong {
+    color: #4682b4;
+}
+.section.about.about-a .container>.row>[class*="col-"], .section.about.about-a .container-fluid>.row>[class*="col-"] {
+    display: inherit;
+float: inherit;
+vertical-align: inherit;
+}
+
+.section.spacer.spacer-a {
+    background-color: #4682b4;
+    border-bottom: 8px solid #2c516f;
+}
+.section.spacer.spacer-a:after {
+    background-color: #4682b4;
+    border: 8px solid #2c516f;
+    border-left-color: transparent;
+    border-top-color: transparent;
+}
+@media (max-width: 991px) {
+    body>header .navbar .navbar-collapse .navbar-nav {
+        margin : 20px -15px;
+    }
+}

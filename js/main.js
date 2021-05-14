@@ -5,21 +5,31 @@
 
 
 
-    // const modal = new Modal()
-    // modal.initModal()
+// const modal = new Modal()
+// modal.initModal()
 
 let btnCabina = document.getElementById('cabina');
-let modalCabina = document.getElementById('modalEncomienda')
+let modalCabina = document.getElementById('modalCabina')
 
-btnCabina.addEventListener("click", function() {
+btnCabina.addEventListener("click", function () {
+  // if (modalCabina.classList.contains('is-visible')) {
     modalCabina.classList.add('is-visible')
-  }); 
+  // }
+  // else {
+  //   modalCabina.classList.add('is-visible')
+  // }
+});
 
-
+const isVisible = "is-visible";
+document.addEventListener("click", e => {
+  if (e.target == document.querySelector(".modal.is-visible")) {
+    document.querySelector(".modal.is-visible").classList.remove(isVisible);
+  }
+});
 // $(function () {
 //     $('[data-toggle="popover"]').popover()
 //   })
-  
+
 
 // $("[data-toggle=popover]").each(function (i, obj) {
 //     $(this).popover({
@@ -58,7 +68,7 @@ btnCabina.addEventListener("click", function() {
 //           '</div>';
 //       }    
 //   });
-  
+
 //   /**
 //     Allow the popover to be closed by clicking anywhere outside it.
 //   **/

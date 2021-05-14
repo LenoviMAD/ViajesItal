@@ -61,3 +61,12 @@
 .hide {
     display: none
 }
+
+.w50p{
+    width: 50%;
+}
+
+.mr-15p{
+    margin-right: -15%;
+}
+
