@@ -140,5 +140,24 @@ class xpresentationLayer
         echo '</DIV>';
     } //endDiv
 
+    /*=======================================================================
+    Function: buildChecks
+    Description: end div tag
+    Parameters:
+    Algorithm:
+    Remarks:
+    Standarized: 2021-05-14 09:40
+    ===================================================================== */
+
+    static function buildChecks()
+    {
+        echo '<DIV>';
+        echo '    <LABEL class="mr20">';
+        echo '        <INPUT class="option-input radio" name="group1" type="radio" />';
+        echo '        <SPAN>Ida y Vuelta</SPAN>';
+        echo '    </LABEL>';
+        echo '</DIV>';
+    } //buildChecks
+
     
 }
