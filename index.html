@@ -38,8 +38,7 @@
                             <a class="nav-link" href="#">Link</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Dropdown
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -167,31 +166,33 @@
                     <div class="container-inputs">
                         <div class="webflow-style-input">
                             <label for="" class="title-Input">Destino</label>
-                            <input class="input-icon" type="text" placeholder="What's your text?"></input>
-                            <button type="submit" class="btn-icon" disabled><i
-                                    class="ion-android-arrow-forward material-icons prefix">sync_alt</i></button>
+                            <input class="input-icon icon-absolute" type="text" placeholder="What's your text?"></input>
+                            <button type="submit" class="btn-icon btn-input" disabled>
+                                <i class="ion-android-arrow-forward material-icons prefix">sync_alt</i>
+                            </button>
                         </div>
                         <div class="webflow-style-input">
                             <label for="" class="title-Input">A</label>
-                            <input class="input-icon" type="text" placeholder="What's your email?"></input>
+                            <input class="input-icon icon-absolute" type="text" placeholder="What's your text?"></input>
                         </div>
-
                         <div class="webflow-style-input">
                             <label for="" class="title-Input">Salida</label>
-                            <input class="input-icon" type="date" placeholder=""></input>
-                            <!-- <button type="submit" class="btn-icon" disabled><i class="ion-android-arrow-forward material-icons prefix">calendar_today</i></button> -->
+                            <input class="input-icon pointer icon-absolute" type="date" placeholder="What's your text?"></input>
+                            <button type="submit" class="btn-icon btn-input" disabled>
+                                <i class="ion-android-arrow-forward material-icons prefix">calendar_today</i>
+                            </button>
                         </div>
                         <div class="webflow-style-input">
                             <label for="" class="title-Input">Regreso</label>
-                            <input class="input-icon" type="date" placeholder=""></input>
-                            <!-- <button type="submit" class="btn-icon" disabled><i class="ion-android-arrow-forward material-icons prefix">calendar_today</i></button> -->
+                            <input class="input-icon pointer icon-absolute" type="date" placeholder="What's your text?"></input>
+                            <button type="submit" class="btn-icon btn-input" disabled>
+                                <i class="ion-android-arrow-forward material-icons prefix">calendar_today</i>
+                            </button>
                         </div>
                         <div class="webflow-style-input">
                             <label for="" class="title-Input">Clase de cabina y viajeros</label>
-                            <input class="input-icon pointer icon-absolute" type="email"
-                                placeholder="What's your email?" id="cabina" aria-disabled=""></input>
-                            <button data-toggle="popover" data-container="body" data-placement="right" data-html="true"
-                                class="btn-icon btn-input " aria-disabled="">
+                            <input class="input-icon pointer icon-absolute" type="email" placeholder="What's your email?" id="cabina" aria-disabled=""></input>
+                            <button data-toggle="popover" data-container="body" data-placement="right" data-html="true" class="btn-icon btn-input " aria-disabled="">
                                 <i class="ion-android-arrow-forward material-icons prefix">arrow_drop_down</i>
                             </button>
                         </div>
@@ -243,8 +244,7 @@
                         </td>
                         <td class="customTableYg__info">
                             <div>
-                                <img src="https://i.pinimg.com/originals/6e/22/56/6e2256829eadd83cd966c6ea6f807bf2.jpg"
-                                    alt="agencia de viajes">
+                                <img src="https://i.pinimg.com/originals/6e/22/56/6e2256829eadd83cd966c6ea6f807bf2.jpg" alt="agencia de viajes">
                             </div>
                             <div class="customTableYg__info__2">
                                 <p class="customTableYg__schedule">14:00 16:14</p>
@@ -270,7 +270,7 @@
                 </tbody>
             </table>
         </div>
-    </main> 
+    </main>
 </body>
 
 </html>
@@ -285,7 +285,7 @@
 <script type="text/javascript" src="DataTables/datatables.min.js"></script>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#example').DataTable();
     });
 </script>

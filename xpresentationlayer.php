@@ -15,7 +15,7 @@ class xpresentationLayer
     /*=======================================================================
     Function: startHtml
     Description: HTML TAG START according to language "lang"
-    Parameters: $lang <--
+    Parameters: 
     Algorithm:
     Remarks:
     Standarized: 2021-05-14 09:40
@@ -83,20 +83,30 @@ class xpresentationLayer
     } //buildHead
     
     /*=======================================================================
-    Function: startFormManu
+    Function: startForm
     Description: start the form of menu 
-    Parameters: $title <-- name of App
+    Parameters: 
     Algorithm:
     Remarks:
     Standarized: 2021-05-14 09:40
     ===================================================================== */
 
-    static function startFormManu()
+    static function startForm($id = "", $event = "", $class = "")
     {
-            echo '<DIV class="container wrapper mt20">';
-            echo '<form action="">';
-    } //startFormManu
+        if ($event != "") {
+            $event = 'onsubmit="' . $event . '"';
+        }
+        if ($class != "") {
+            $class = 'class="' . $class . '"';
+        }
+        if ($id != "") {
+            $id = 'id="' . $id . '"';
+        }
 
+            echo '<DIV class="container wrapper mt20">';
+            echo '<FORM ' . $id . $event . $class . '>';
+    } //startForm
+    
     /*=======================================================================
     Function: endFormManu
     Description: end the form of menu 
@@ -106,26 +116,26 @@ class xpresentationLayer
     Standarized: 2021-05-14 09:40
     ===================================================================== */
 
-    static function endFormManu()
+    static function endForm()
     {
         echo '</FORM>';
         echo '</DIV>';
     } //endFormManu
-
+    
     /*=======================================================================
-    Function: startContainerChecks
-    Description: start container checks
+    Function: startDiv
+    Description: start div 
     Parameters:
     Algorithm:
     Remarks:
     Standarized: 2021-05-14 09:40
     ===================================================================== */
 
-    static function startContainerChecks()
+    static function startDiv($class)
     {
-        echo '<DIV class="container-checks">';
-    } //startContainerChecks
-
+        echo '<DIV class="'.$class.'">';
+    } //startDiv
+    
     /*=======================================================================
     Function: endDiv
     Description: end div tag
@@ -139,24 +149,117 @@ class xpresentationLayer
     {
         echo '</DIV>';
     } //endDiv
-
+    
     /*=======================================================================
     Function: buildChecks
     Description: build a check component
+    Parameters: $title <-- Title of label
+                $idInput <-- Id of the input
+                $nameInput <-- Name of the checks
+                Algorithm: 
+    Remarks:
+    Standarized: 2021-05-14 09:40
+    ===================================================================== */
+    
+    static function buildChecks($title, $nameInput, $idInput)
+    {
+        echo '<DIV>';
+        echo '    <LABEL class="mr20">';
+        echo '        <INPUT class="option-input radio" id="'.$idInput.'" name="'.$nameInput.'" type="radio" />';
+        echo '        <SPAN>'.$title.'</SPAN>';
+        echo '    </LABEL>';
+        echo '</DIV>';
+    } //buildChecks
+    
+    /*=======================================================================
+    Function: startContainerInputs
+    Description: start the container inputs
+    Parameters: 
     Algorithm:
     Remarks:
     Standarized: 2021-05-14 09:40
     ===================================================================== */
 
-    static function buildChecks()
+    static function startContainerInputs()
     {
-        echo '<DIV>';
-        echo '    <LABEL class="mr20">';
-        echo '        <INPUT class="option-input radio" name="group1" type="radio" />';
-        echo '        <SPAN>Ida y Vuelta</SPAN>';
-        echo '    </LABEL>';
+            echo '<DIV class="displayf">';
+            echo '  <DIV class="container-inputs">';
+    } //startContainerInputs
+    
+    /*=======================================================================
+    Function: endContainerInputs
+    Description: end div double tag
+    Parameters:
+    Algorithm:
+    Remarks:
+    Standarized: 2021-05-14 09:40
+    ===================================================================== */
+    
+    static function endContainerInputs()
+    {
+        echo '  </DIV>';
+        echo '</DIV>';
+    } //endContainerInputs
+    
+    /*=======================================================================
+    Function: buildInputWithIcon
+    Description: build a check component
+    Parameters: $title <-- Title of label
+                $idInput <-- Id of the input
+                $nameInput <-- Name of the checks
+                Algorithm: 
+    Remarks:
+    Standarized: 2021-05-14 09:40
+    ===================================================================== */
+    
+    static function buildInputWithIcon($title, $typeInput, $nameInput, $idInput, $icon, $placeholder)
+    {
+        echo '<DIV class="webflow-style-input">';
+        echo '    <LABEL for="" class="title-Input">'.$title.'</LABEL>';
+        echo '    <INPUT class="input-icon" type="'.$typeInput.'" placeholder="'.$placeholder.'" name="'.$nameInput.'"  id="'.$idInput.'"></INPUT>';
+        echo '    <BUTTON type="submit" class="btn-icon" disabled>';
+        echo '        <I class="ion-android-arrow-forward material-icons prefix">'.$icon.'</I>';
+        echo '    </BUTTON>';
+        echo '</DIV>';
+    } //buildInputWithIcon
+
+    
+    /*=======================================================================
+    Function: buildChecks
+    Description: build a check component
+    Parameters: $title <-- Title of label
+    $idInput <-- Id of the input
+    $nameInput <-- Name of the checks
+    Algorithm: 
+    Remarks:
+    Standarized: 2021-05-14 09:40
+    ===================================================================== */
+    
+    static function buildInput($title, $nameInput, $idInput, $placeholder = "")
+    {
+        echo '<DIV class="webflow-style-input">';
+        echo '    <LABEL for="" class="title-Input">'.$title.'</LABEL>';
+        echo '    <INPUT class="input-icon icon-absolute" type="text" placeholder="'.$placeholder.'" name="'.$nameInput.'"  id="'.$idInput.'"></INPUT>';
         echo '</DIV>';
     } //buildChecks
-
+    
+    /*=======================================================================
+    Function: buildChecks
+    Description: build a check component
+    Parameters: $title <-- Title of label
+                $idInput <-- Id of the input
+                $nameInput <-- Name of the checks
+                Algorithm: 
+    Remarks:
+    Standarized: 2021-05-14 09:40
+    ===================================================================== */
+    
+    static function buildCheckBox($title, $nameInput, $idInput)
+    {
+        echo '<DIV class="width-25percent">';
+        echo '    <INPUT type="checkbox" id="'.$idInput.'" name="'.$nameInput.'"/>';
+        echo '    <LABEL for="test1">'.$title.'</LABEL>';
+        echo '</DIV>';
+    } //buildChecks
     
 }
