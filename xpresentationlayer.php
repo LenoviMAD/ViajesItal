@@ -244,7 +244,7 @@ class xpresentationLayer
     } //buildChecks
     
     /*=======================================================================
-    Function: buildChecks
+    Function: buildCheckBox
     Description: build a check component
     Parameters: $title <-- Title of label
                 $idInput <-- Id of the input
@@ -258,8 +258,31 @@ class xpresentationLayer
     {
         echo '<DIV class="width-25percent">';
         echo '    <INPUT type="checkbox" id="'.$idInput.'" name="'.$nameInput.'"/>';
-        echo '    <LABEL for="test1">'.$title.'</LABEL>';
+        echo '    <LABEL for="'.$idInput.'">'.$title.'</LABEL>';
         echo '</DIV>';
-    } //buildChecks
+    } //buildCheckBox
+
+    /*=======================================================================
+    Function: buildGrid
+    Description: build a check component
+    Parameters: $title <-- Title of label
+                $idInput <-- Id of the input
+                $nameInput <-- Name of the checks
+                Algorithm: 
+    Remarks:
+    Standarized: 2021-05-14 09:40
+    ===================================================================== */
+    
+    static function buildGrid($title, $nameInput, $idInput)
+    {
+        echo '<DIV class="width-25percent">';
+        echo '    <INPUT type="checkbox" id="'.$idInput.'" name="'.$nameInput.'"/>';
+        echo '    <LABEL for="'.$idInput.'">'.$title.'</LABEL>';
+        echo '</DIV>';
+    } //buildGrid
+
+    
+
+
     
 }
