@@ -66,11 +66,18 @@ input.image_buscar {
     font-weight: bold;
 }
 
-.margin-auto{
+.margin-auto {
     margin: auto;
 }
 
 select {
     padding: 10px;
     cursor: pointer;
+}
+
+.img-body {
+    background: url(../img/Fondo.jpg);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
