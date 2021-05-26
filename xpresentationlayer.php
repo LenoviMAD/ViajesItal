@@ -38,9 +38,9 @@ class xpresentationLayer
     {
         echo '</HTML>';
         echo '<SCRIPT src="./js/jquery-3.6.0.min.js" type="text/javascript"></SCRIPT>';
-        echo '<SCRIPT src="./js/popper.min.js" type="text/javascript"></SCRIPT>';
-        echo '<SCRIPT src="./js/bootstrap.js" type="text/javascript"></SCRIPT>';
-        echo '<SCRIPT src="./js/bootstrap.bundle.js" type="text/javascript"></SCRIPT>';
+        // echo '<SCRIPT src="./js/popper.min.js" type="text/javascript"></SCRIPT>';
+        // echo '<SCRIPT src="./js/bootstrap.js" type="text/javascript"></SCRIPT>';
+        // echo '<SCRIPT src="./js/bootstrap.bundle.js" type="text/javascript"></SCRIPT>';
         echo '<SCRIPT src="./js/main.js" type="text/javascript"></SCRIPT>';
         echo '<SCRIPT src="./js/jquery-3.6.0.min.js"></SCRIPT>';
         echo '<SCRIPT type="text/javascript" src="DataTables/datatables.min.js"></SCRIPT>';
@@ -81,7 +81,7 @@ class xpresentationLayer
         echo  ' <LINK rel="stylesheet" href="./css/bootstrap.min.css">';
         echo  ' <LINK rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />';
         echo  ' <LINK rel="stylesheet" href="./css/tablesCustomYg.css">';
-        echo  ' <LINK href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">';
+        // echo  ' <LINK href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">';
         echo  ' </HEAD> ';
         echo  ' <BODY '.$classBody.'> ';
     } //buildHead
@@ -177,9 +177,13 @@ class xpresentationLayer
     Standarized: 2021-05-14 09:40
     ===================================================================== */
 
-    static function startDiv($class)
+    static function startDiv($class = "")
     {
-        echo '<DIV class="'.$class.'">';
+        if ($class != "") {
+            $class = 'class="' . $class . '"';
+        }
+
+        echo '<DIV '.$class.'>';
     } //startDiv
     
     /*=======================================================================
@@ -258,7 +262,7 @@ class xpresentationLayer
     Standarized: 2021-05-14 09:40
     ===================================================================== */
     
-    static function buildInputWithIcon($title, $typeInput, $nameInput, $idInput, $icon, $placeholder = "", $readOnly = "", $disabled ="")
+    static function buildInputWithIcon($title, $typeInput, $nameInput, $idInput, $nameImage, $placeholder = "", $readOnly = "", $disabled ="")
     {
         if ($readOnly != "") {
             $readOnly = 'readOnly';
@@ -271,7 +275,7 @@ class xpresentationLayer
         echo '    <LABEL for="" class="title-Input">'.$title.'</LABEL>';
         echo '    <INPUT class="input-icon" type="'.$typeInput.'" placeholder="'.$placeholder.'" name="'.$nameInput.'"  id="'.$idInput.'" '.$readOnly.' '.$disabled.'></INPUT>';
         echo '    <BUTTON type="submit" class="btn-icon" disabled>';
-        echo '        <I class="ion-android-arrow-forward material-icons prefix">'.$icon.'</I>';
+        echo '        <I class="ion-android-arrow-forward material-icons prefix"><IMG src="./img/'.$nameImage.'"></I>';
         echo '    </BUTTON>';
         echo '</DIV>';
     } //buildInputWithIcon
@@ -357,7 +361,7 @@ class xpresentationLayer
         echo '                </td>';
         echo '                <td class="customTableYg__info">';
         echo '                    <div>';
-        echo '                        <img src="https://i.pinimg.com/originals/6e/22/56/6e2256829eadd83cd966c6ea6f807bf2.jpg" alt="agencia de viajes">';
+        echo '                        <img src="./img/airline.jpg" alt="agencia de viajes">';
         echo '                    </div>';
         echo '                    <div class="customTableYg__info__2">';
         echo '                        <p class="customTableYg__schedule">14:00 16:14</p>';
@@ -443,7 +447,7 @@ class xpresentationLayer
     Function: buildOptionGrid
     Description: Build options in the first section with a limit of 3 and set the $title name
     Parameters: $title <-- Name Option
-                $data_id <-- Para relacionar con las opciones de buildOptionsPrincipal
+    $data_id <-- Para relacionar con las opciones de buildOptionsPrincipal
     Algorithm:
     Remarks:
     Standarized: 2021/01/18 14:00
@@ -460,11 +464,11 @@ class xpresentationLayer
     Function: buildSelectJson
     Description: Build Select with Jason 
     Parameters: $title <-- Contiene el titulo del objeto		
-                $name <-- Contiele el nombre del objeto html
-                $id  <-- Contiele el id del objeto html
-                $json <-- Contiele los datos en formato json				
-                $showCol <-- Valor de la columna a mostrar de la BD
-                $event <--
+    $name <-- Contiele el nombre del objeto html
+    $id  <-- Contiele el id del objeto html
+    $json <-- Contiele los datos en formato json				
+    $showCol <-- Valor de la columna a mostrar de la BD
+    $event <--
     Algorithm:
     Remarks:
     Standarized: 2021/01/18 14:00
@@ -472,7 +476,7 @@ class xpresentationLayer
     static function buildSelectJson($title, $name, $id, $json, $event = "", $classContainer = "", $required = false, $idContainer = "")
     {
         $data = $json->list;
-
+        
         if ($event != "") {
             $event = 'onchange="' . $event . '"';
         }
@@ -485,10 +489,10 @@ class xpresentationLayer
         if ($required) {
             $required  = 'required';
         }
-
+        
         echo '<DIV class="input-field1 ' . $classContainer . '" ' . $idContainer . '>';
         echo '    <LABEL class="font-Bold">' . $title . '</LABEL>';
-
+        
         echo '<SELECT name="' . $name . '" ' . $id . $event . $required . '>';
         echo '<OPTION disabled selected>Seleccione</OPTION>';
         foreach ($data as $value) {
@@ -499,5 +503,80 @@ class xpresentationLayer
         echo '</DIV>';
     } //buildSelectJson
     
+    /*=======================================================================
+    Function: buildCardsNotice
+    Description: build a check component
+    Parameters: $titleNotice <-- title of notice
+                $textNotice <-- Information
+                $classContainer <-- for add class css
+                $routeImage <-- route of img of notice
+                Algorithm: 
+    Remarks:
+    Standarized: 2021-05-26 11:40
+    ===================================================================== */
+    
+    static function buildCardsNotice($titleNotice, $textNotice, $routeImage, $classContainer = "" )
+    {
+
+        echo '<DIV class="card h25em '.$classContainer.'">';
+        echo '    <ASIDE class="aside-card">';
+        echo '        <FIGURE>';
+        echo '            <IMG class="card-img" src="'.$routeImage.'">';
+        echo '        </FIGURE>';
+        echo '    </ASIDE>';
+        echo '    <DIV class="card-body">';
+        echo '        <H5 class="card-title">'.$titleNotice.'</H5>';
+        echo '        <P class="card-text">'.$textNotice.'</P>';
+        echo '    </DIV>';
+        echo '</DIV>';
+    } //buildCardsNotice
+
+    /*=======================================================================
+    Function: buildFooter
+    Description: build a check component
+    Parameters: $titleNotice <-- title of notice
+                $textNotice <-- Information
+                $classContainer <-- for add class css
+                $routeImage <-- route of img of notice
+                Algorithm: 
+    Remarks:
+    Standarized: 2021-05-26 11:40
+    ===================================================================== */
+    
+    static function buildFooter()
+    {
+
+        echo '<FOOTER class="footer-16371">';
+        echo '    <DIV class="container">';
+        echo '        <DIV class="row justify-content-center">';
+        echo '            <DIV class="col-md-9 text-center">';
+        echo '                <DIV class="footer-site-logo mb-4">';
+        echo '                    <a href="#">Italviajes</a>';
+        echo '                </DIV>';
+        echo '                <UL class="list-unstyled nav-links mb-5">';
+        echo '                    <li><a href="#">About</a></li>';
+        echo '                    <li><a href="#">Services</a></li>';
+        echo '                    <li><a href="#">Press</a></li>';
+        echo '                    <li><a href="#">Careers</a></li>';
+        echo '                    <li><a href="#">FAQ</a></li>';
+        echo '                    <li><a href="#">Legal</a></li>';
+        echo '                    <li><a href="#">Contact</a></li>';
+        echo '                </UL>';
+        // echo '                <DIV class="social mb-4">';
+        // echo '                    <h3>Redes</h3>';
+        // echo '                    <UL class="list-unstyled">';
+        // echo '                    </UL>';
+        // echo '                </DIV>';
+        echo '                <DIV class="copyright">';
+        echo '                    <P class="mb-0"><small>© Italviajes. All Rights Reserved.</small></P>';
+        echo '                    <P> Designed and developed by:';
+        echo '                        <B> Italviajes ft. Xatoxi </B>';
+        echo '                    </P>';
+        echo '                </DIV>';
+        echo '            </DIV>';
+        echo '        </DIV>';
+        echo '    </DIV>';
+        echo '</FOOTER>';
+    } //buildFooter
     
 }
