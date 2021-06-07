@@ -1,4 +1,6 @@
-.input-field1 select, .input-field1 input, .input-field1 textarea {
+.input-field1 select,
+.input-field1 input,
+.input-field1 textarea {
     display: block;
     width: 100%;
     border: 1px solid #333;
@@ -10,7 +12,9 @@
     height: auto;
 }
 
-.valDanger.input-field1 select, .valDanger.input-field1 input, .valDanger.input-field1 textarea {
+.valDanger.input-field1 select,
+.valDanger.input-field1 input,
+.valDanger.input-field1 textarea {
     border: 2px solid red;
 }
 
@@ -25,6 +29,7 @@
     padding: 5px;
     background: rgb(255, 255, 255);
 }
+
 
 /* .webflow-style-input:after {
     content: "";
@@ -61,6 +66,7 @@
     vertical-align: middle;
     transition: color 0.25s;
 }
+
 
 /* .webflow-style-input button:hover {
     color: #bfd2ff;

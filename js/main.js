@@ -10,21 +10,10 @@
 
 let btnCabina = document.getElementById('cabina');
 let modalCabina = document.getElementById('modalCabina')
-let modalLoader = document.getElementById('loader')
-let btnModal = document.getElementById('btnModal')
 
 btnCabina.addEventListener("click", function () {
   // if (modalCabina.classList.contains('is-visible')) {
     modalCabina.classList.add('is-visible')
-  // }
-  // else {
-  //   modalCabina.classList.add('is-visible')
-  // }
-});
-
-btnModal.addEventListener("click", function () {
-  // if (modalCabina.classList.contains('is-visible')) {
-    modalLoader.classList.add('is-visible')
   // }
   // else {
   //   modalCabina.classList.add('is-visible')
