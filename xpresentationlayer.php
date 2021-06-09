@@ -60,10 +60,10 @@ class xpresentationLayer
     Standarized: 2021-05-14 09:40
     ===================================================================== */
 
-    static function buildHead($title, $classBody="")
+    static function buildHead($title, $classBody = "")
     {
         if ($classBody != "") {
-            $classBody = 'class="'.$classBody.'"';
+            $classBody = 'class="' . $classBody . '"';
         }
 
         echo  '<HEAD>';
@@ -83,7 +83,7 @@ class xpresentationLayer
         echo  ' <LINK rel="stylesheet" href="./css/tablesCustomYg.css">';
         echo  ' <LINK href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">';
         echo  ' </HEAD> ';
-        echo  ' <BODY '.$classBody.'> ';
+        echo  ' <BODY ' . $classBody . '> ';
     } //buildHead
 
     /*=======================================================================
@@ -127,7 +127,7 @@ class xpresentationLayer
     {
         echo  '</MAIN>';
     } //endMain
-    
+
     /*=======================================================================
     Function: startForm
     Description: start the form of menu 
@@ -149,10 +149,10 @@ class xpresentationLayer
             $id = 'id="' . $id . '"';
         }
 
-            echo '<DIV class="container wrapper mt20">';
-            echo '  <FORM ' . $id . $action . $class . '>';
+        echo '<DIV class="container wrapper mt20">';
+        echo '  <FORM ' . $id . $action . $class . '>';
     } //startForm
-    
+
     /*=======================================================================
     Function: endFormManu
     Description: end the form of menu 
@@ -167,7 +167,7 @@ class xpresentationLayer
         echo '  </FORM>';
         echo '</DIV>';
     } //endFormManu
-    
+
     /*=======================================================================
     Function: startDiv
     Description: start div 
@@ -179,9 +179,9 @@ class xpresentationLayer
 
     static function startDiv($class)
     {
-        echo '<DIV class="'.$class.'">';
+        echo '<DIV class="' . $class . '">';
     } //startDiv
-    
+
     /*=======================================================================
     Function: endDiv
     Description: end div tag
@@ -195,7 +195,7 @@ class xpresentationLayer
     {
         echo '</DIV>';
     } //endDiv
-    
+
     /*=======================================================================
     Function: buildInputRadio
     Description: build a check component
@@ -206,17 +206,17 @@ class xpresentationLayer
     Remarks:
     Standarized: 2021-05-14 09:40
     ===================================================================== */
-    
+
     static function buildInputRadio($title, $nameInput, $idInput)
     {
         echo '<DIV>';
         echo '    <LABEL class="mr20">';
-        echo '        <INPUT class="option-input radio" id="'.$idInput.'" name="'.$nameInput.'" type="radio" />';
-        echo '        <SPAN>'.$title.'</SPAN>';
+        echo '        <INPUT class="option-input radio" id="' . $idInput . '" name="' . $nameInput . '" type="radio" />';
+        echo '        <SPAN>' . $title . '</SPAN>';
         echo '    </LABEL>';
         echo '</DIV>';
     } //buildInputRadio
-    
+
     /*=======================================================================
     Function: startContainerInputs
     Description: start the container inputs
@@ -228,10 +228,10 @@ class xpresentationLayer
 
     static function startContainerInputs()
     {
-            echo '<DIV class="displayf">';
-            echo '  <DIV class="container-inputs">';
+        echo '<DIV class="displayf">';
+        echo '  <DIV class="container-inputs">';
     } //startContainerInputs
-    
+
     /*=======================================================================
     Function: endContainerInputs
     Description: end div double tag
@@ -240,13 +240,13 @@ class xpresentationLayer
     Remarks:
     Standarized: 2021-05-14 09:40
     ===================================================================== */
-    
+
     static function endContainerInputs()
     {
         echo '  </DIV>';
         echo '</DIV>';
     } //endContainerInputs
-    
+
     /*=======================================================================
     Function: buildInputWithIcon
     Description: build a check component
@@ -257,8 +257,8 @@ class xpresentationLayer
     Remarks:
     Standarized: 2021-05-14 09:40
     ===================================================================== */
-    
-    static function buildInputWithIcon($title, $typeInput, $nameInput, $idInput, $icon, $placeholder = "", $readOnly = "", $disabled ="")
+
+    static function buildInputWithIcon($title, $typeInput, $nameInput, $idInput, $icon, $placeholder = "", $readOnly = "", $disabled = "")
     {
         if ($readOnly != "") {
             $readOnly = 'readOnly';
@@ -268,15 +268,15 @@ class xpresentationLayer
         }
 
         echo '<DIV class="webflow-style-input">';
-        echo '    <LABEL for="" class="title-Input">'.$title.'</LABEL>';
-        echo '    <INPUT class="input-icon" type="'.$typeInput.'" placeholder="'.$placeholder.'" name="'.$nameInput.'"  id="'.$idInput.'" '.$readOnly.' '.$disabled.'></INPUT>';
+        echo '    <LABEL for="" class="title-Input">' . $title . '</LABEL>';
+        echo '    <INPUT class="input-icon" type="' . $typeInput . '" placeholder="' . $placeholder . '" name="' . $nameInput . '"  id="' . $idInput . '" ' . $readOnly . ' ' . $disabled . '></INPUT>';
         echo '    <BUTTON type="submit" class="btn-icon" disabled>';
-        echo '        <I class="ion-android-arrow-forward material-icons prefix">'.$icon.'</I>';
+        echo '        <I class="ion-android-arrow-forward material-icons prefix">' . $icon . '</I>';
         echo '    </BUTTON>';
         echo '</DIV>';
     } //buildInputWithIcon
 
-    
+
     /*=======================================================================
     Function: buildChecks
     Description: build a check component
@@ -287,8 +287,8 @@ class xpresentationLayer
     Remarks:
     Standarized: 2021-05-14 09:40
     ===================================================================== */
-    
-    static function buildInput($title, $typeInput, $nameInput, $idInput, $placeholder = "", $readOnly = "", $disabled ="")
+
+    static function buildInput($title, $typeInput, $nameInput, $idInput, $placeholder = "", $readOnly = "", $disabled = "")
     {
         if ($readOnly != "") {
             $readOnly = 'readOnly';
@@ -297,11 +297,11 @@ class xpresentationLayer
             $disabled = 'disabled';
         }
         echo '<DIV class="webflow-style-input">';
-        echo '    <LABEL for="" class="title-Input">'.$title.'</LABEL>';
-        echo '    <INPUT class="input-icon icon-absolute" type="'.$typeInput.'" placeholder="'.$placeholder.'" name="'.$nameInput.'"  id="'.$idInput.'" '.$readOnly.' '.$disabled.'></INPUT>';
+        echo '    <LABEL for="" class="title-Input">' . $title . '</LABEL>';
+        echo '    <INPUT class="input-icon icon-absolute" type="' . $typeInput . '" placeholder="' . $placeholder . '" name="' . $nameInput . '"  id="' . $idInput . '" ' . $readOnly . ' ' . $disabled . '></INPUT>';
         echo '</DIV>';
     } //buildChecks
-    
+
     /*=======================================================================
     Function: buildCheckBox
     Description: build a check component
@@ -312,19 +312,19 @@ class xpresentationLayer
     Remarks:
     Standarized: 2021-05-14 09:40
     ===================================================================== */
-    
-    static function buildCheckBox($title, $nameInput, $idInput, $disabled ="")
+
+    static function buildCheckBox($title, $nameInput, $idInput, $disabled = "")
     {
         if ($disabled != "") {
             $disabled = 'disabled';
         }
 
         echo '<DIV class="width-25percent">';
-        echo '    <INPUT type="checkbox" id="'.$idInput.'" name="'.$nameInput.'" '.$disabled.'/>';
-        echo '    <LABEL for="'.$idInput.'">'.$title.'</LABEL>';
+        echo '    <INPUT type="checkbox" id="' . $idInput . '" name="' . $nameInput . '" ' . $disabled . '/>';
+        echo '    <LABEL for="' . $idInput . '">' . $title . '</LABEL>';
         echo '</DIV>';
     } //buildCheckBox
-    
+
     /*=======================================================================
     Function: buildGrid
     Description: build a check component
@@ -335,7 +335,7 @@ class xpresentationLayer
     Remarks:
     Standarized: 2021-05-14 09:40
     ===================================================================== */
-    
+
     static function buildGrid()
     {
         echo '<DIV class="container border-table mt20">';
@@ -384,12 +384,13 @@ class xpresentationLayer
         echo '    </TABLE>';
         echo '</DIV>';
     } //buildGrid
-    
 
-    static function fillGridArrPaginatorFullLink($arr, $arrCol,$par="",$pageSize=10,$pageNumber=0,$width=900,$check="0",$eventcheck,$select="0",$eventradio,$id = "",$idmodal="") {
+
+    static function fillGridArrPaginatorFullLink($arr, $arrCol, $clase = "", $check = "0", $select = "0", $eventradio, $id = "")
+    {
         $nr = count($arr);
         $nc = count($arrCol);
-        //echo '<table id='.$id.' class="display '.$clase.'" width="100%">';
+        echo '<table id=' . $id . ' class="display ' . $clase . '" width="100%">';
         echo '<thead>';
         echo "<tr>";
         if ($check) {
@@ -398,52 +399,64 @@ class xpresentationLayer
         if ($select) {
             echo "<th>Selec.</th>";
         }
-        for($i=0; $i < $nc; $i++) {
+        for ($i = 0; $i < $nc; $i++) {
             $name = $arrCol[$i];
-            $clase = "th".$i;
-            echo "<th class = '".$clase."'>".$name."</th>";
+            //$claseTh = "th".$i;
+            echo "<th class = 'text-center'>" . $name . "</th>";
         }
-         echo "</tr>";
+        echo "</tr>";
         echo '</thead>';
-    
+
         echo '<tbody>';
         $end = 0;
-    
+
         //print_r($arr);
         if (is_array($arr)) { // bring values
-            for($i=0; $i < $nr; $i++) {
-                $clase = "td".$i;
-                echo "  <tr> ";
-                $reg = $arr[$i];
-                if ($check) {
-                    $name = "CH".$i;
-                    $id = "CH".$i;
-                    echo '<td><input type="checkbox" name ="'.$name.'" id = "'.$id.'" onclick="'.$eventcheck.'"></td>';
-                }
-                if ($select) {
-                    $name = "CB".$i;
-                    $id = "CB".$i;
-                    echo '<td><input data-toggle="modal" data-target="'.$idmodal.'" type="radio"  name ="seleccion" id = "'.$id.'"  onclick="'.$eventradio.'"></td>';
-                }
-                $j = 0; // assummes id, first column
-                foreach ($reg as $col) {
-                  if ($j == 0) {
-                    echo "<td>$col</a></td>";
-                  }
-                  else {
-                    echo "<td class = 'col".$j."'>".$col."</td>";
-                  }
-                  $j++;
-                }
+            for ($i = 0; $i < $nr; $i++) {
+                $clase = "td" . $i;
+                echo "  <tr> ";                
+
+                    echo '<td class="text-center">';
+                    echo '    <input class="customTableYg__check"';
+                    echo '        type="checkbox" id="CB'.$i.'">';
+                    echo '</td>';
+                    echo '<td class="customTableYg__info">';
+                    echo '    <div>';
+                    echo '        <img src="./img/'.$_POST["img"].'"';
+                    echo '            alt="agencia de viajes">';
+                    echo '    </div>';
+                    echo '    <div class="customTableYg__info__2">';
+                    echo '        <p class="customTableYg__schedule">'.$_POST["horario"].'/p>';
+                    echo '        <h3 class="customTableYg__destination">'.$_POST["ruta"].'</h3>';
+                    echo '    </div>';
+                    echo '</td>';
+                    echo '<td class="customTableYg__type">';
+                    echo '   '.$_POST["ModoVuelo"].'';
+                    echo '</td>';
+                    echo '<td class="customTableYg__time">'.$_POST["TiempoVuelo"].'</td>';
+                    $name = "CB" . $i;
+                    $id = "CB" . $i;
+                    echo '<td class="text-center">';
+                    echo '    <h3 class="customTableYg__price">';
+                    echo '       '.$_POST["Precio"].'';
+                    echo '        <small>';
+                    echo '            '.$_POST["PrecioTotal"].' en total';
+                    echo '        </small>';
+                    echo '    </h3>';
+                    echo '    <button class="btnCustom btnCustom-table" name ="'.$name.'" id = "' . $id . '"  onclick="' . $eventradio . '">';
+                    echo '        Seleccionar';
+                    echo '    </button>';
+                    echo '</td>';   
+
                 echo '</tr>';
             }
         }
-        else {
-          $end=1;
-        }
+        // else {
+        //   $end=1;
+        // }
         echo '</tbody>';
         echo '</table>';
-        }
+    }
     /*=======================================================================
     Function: buildOptionGrid
     Description: Build options in the first section with a limit of 3 and set the $title name
@@ -453,14 +466,14 @@ class xpresentationLayer
     Remarks:
     Standarized: 2021/01/18 14:00
     ===================================================================== */
-    
+
     static function buildButton($title, $idButton)
     {
         echo '<BUTTON class="btnCustom btnCustom-table" id="' . $idButton . '" >';
         echo $title;
         echo '</BUTTON>';
     } //buildButton
-    
+
     /*=======================================================================
     Function: buildSelectJson
     Description: Build Select with Jason 
@@ -503,6 +516,6 @@ class xpresentationLayer
         echo '</SELECT>';
         echo '</DIV>';
     } //buildSelectJson
-    
-    
+
+
 }
